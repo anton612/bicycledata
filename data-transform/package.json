@@ -1,0 +1,15 @@
+{
+  "name": "bicycle-data-transform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "geocode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^0.4.5",
+    "geocoder": "^0.2.2"
+  }
+}
