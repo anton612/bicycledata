@@ -2,6 +2,9 @@ require 'rubygems'
 require 'geocoder'
 require 'csv'
 
+
+#Geocoder.configure(:api_key => "", :use_https => true)
+
 outfile = File.open('temp.csv', 'w')
 outfile.write("Crash ID,County,Community,Primary Road,Intersecting Road,Date,Time,Type,Level,Crash Rpt.,long,lat\n")
 
