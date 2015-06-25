@@ -6,7 +6,7 @@ require 'csv'
 #Geocoder.configure(:api_key => "", :use_https => true)
 
 outfile = File.open('temp.csv', 'w')
-outfile.write("Crash ID,County,Community,Primary Road,Intersecting Road,Date,Time,Type,Level,Crash Rpt.,long,lat\n")
+outfile.write("Crash ID,County,Community,Primary Road,Intersecting Road,Date,Time,Type,Level,Crash Rpt.,lat,long\n")
 
 CSV.foreach("../Bicyclist-Motorist_Crashes_2000-2013.csv", {:headers=>:first_row}) do |row|
 	intersectionString = row["Primary Road"] + " and " + row["Intersecting Road"] + " " + row["Community"];
