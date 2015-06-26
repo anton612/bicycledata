@@ -8,7 +8,7 @@ require 'csv'
 outfile = File.open('temp.csv', 'w')
 outfile.write("Crash ID,County,Community,Primary Road,Intersecting Road,Date,Time,Type,Level,Crash Rpt.,lat,long\n")
 
-CSV.foreach("../Bicyclist-Motorist_Crashes_2000-2013.csv", {:headers=>:first_row}) do |row|
+CSV.foreach("../Bicyclist-Motorist_Crashes_2000-2014.csv", {:headers=>:first_row}) do |row|
 	intersectionString = row["Primary Road"] + " and " + row["Intersecting Road"] + " " + row["Community"];
 
 	coords = Geocoder.coordinates(intersectionString)
