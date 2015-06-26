@@ -1,0 +1,1 @@
+Run geocode.rb. Be warned that the google geocoding API lets you only run 2500/day and this has 3762 rows so you have to do some funny business with API keys to get it to work in one day. You shouldn't need to run this again though - Just use the Geocoded-Bicyclist-Motorist_Crashes_2000-2013.csv file
