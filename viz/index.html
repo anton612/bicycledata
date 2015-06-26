@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.29.1"></script>
+    <style type="text/css">
+
+html, body, #map {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.crashes, .crashes svg {
+  position: absolute;
+}
+
+.crashes svg {
+  width: 60px;
+  height: 20px;
+  padding-right: 100px;
+  font: 10px sans-serif;
+}
+
+.crashes circle {
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script type="text/javascript">
+
+// Create the Google Map…
+var map = new google.maps.Map(d3.select("#map").node(), {
+  zoom: 12,
+  center: new google.maps.LatLng(44.9763201,-93.2708829),
+  mapTypeId: google.maps.MapTypeId.TERRAIN
+});
+
+
+d3.csv("bicycle-data.csv", function(data) {
+  //data = data.filter(function(d, i) { return d.Level == "Fatalities"; });
+
+  var overlay = new google.maps.OverlayView();
+
+  // Add the container when the overlay is added to the map.
+  overlay.onAdd = function() {
+    var layer = d3.select(this.getPanes().overlayLayer).append("div")
+        .attr("class", "crashes");
+
+    // Draw each marker as a separate SVG element.
+    // We could use a single SVG, but what size would it have?
+    overlay.draw = function() {
+      var projection = this.getProjection(),
+          padding = 10;
+
+          console.log(data);
+
+      var marker = layer.selectAll("svg")
+          .data(d3.entries(data))
+          .each(transform) // update existing markers
+        .enter().append("svg:svg")
+          .each(transform)
+          .attr("class", "marker");
+
+      // Add a circle.
+      marker.append("svg:circle")
+          .attr("r", 4.5)
+          .attr("cx", padding)
+          .attr("cy", padding)
+          .attr("fill", function(d){
+            if (d.value.Level == "Possible Injury (C)"){
+              return "purple";
+            }
+            else if (d.value.Level == "Fatalities"){
+              return "red";
+            }
+            else if (d.value.Level == "Property Damage Only"){
+              return "green";
+            }
+            else if (d.value.Level == "Non-Incap. Injury (B)"){
+              return "yellow";
+            }
+            else if (d.value.Level == "Incap. Injury (A)"){
+              return "orange";
+            }
+          });
+
+      // Add a label.
+     /* marker.append("svg:text")
+          .attr("x", padding + 7)
+          .attr("y", padding)
+          .attr("dy", ".31em")
+          .text(function(d) { return d.Level; });*/
+
+      function transform(d) {
+        d = new google.maps.LatLng(d.value.lat, d.value.long);
+        d = projection.fromLatLngToDivPixel(d);
+        return d3.select(this)
+            .style("left", (d.x - padding) + "px")
+            .style("top", (d.y - padding) + "px");
+      }
+    };
+  };
+
+  // Bind our overlay to the map…
+  overlay.setMap(map);
+});
+
+    </script>
+  </body>
+</html>
