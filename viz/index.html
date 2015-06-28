@@ -115,16 +115,17 @@ loadData().then(function(){
     
     var tip = d3.tip().attr('class', 'd3-tip').html(function(d) { 
       var intersectString = "Intersection: <b>" + d.values[0]["Primary Road"] + " and " + d.values[0]["Intersecting Road"] + "</b>";
-      var  propDamageString = "Accidents w/ Property Damage Only: <b>" + d.intersectPropDamage + "</b>";
-      var  possInjuryString = "Accidents w/ Possible Injury: <b>" + d.intersectPossInjury + "</b>";
-      var  nonIncapInjuryString = "Accidents w/ Non-Incapacitated Injury: <b>" + d.intersectNonIncapInjury + "</b>";
-      var  incapInjuryString = "Accidents w/ Incapacitated Injury: <b>" + d.intersectIncapInjury + "</b>";
-      var  fatalityString = "Accidents w/ Fatality: <b>" + d.intersectFatality + "</b>";
+      var accidentsHeader = "Accidents With..."
+      var  propDamageString = "Property Damage Only: <b>" + d.intersectPropDamage + "</b>";
+      var  possInjuryString = "Possible Injury: <b>" + d.intersectPossInjury + "</b>";
+      var  nonIncapInjuryString = "Non-Incapacitated Injury: <b>" + d.intersectNonIncapInjury + "</b>";
+      var  incapInjuryString = "Incapacitated Injury: <b>" + d.intersectIncapInjury + "</b>";
+      var  fatalityString = "Fatality: <b>" + d.intersectFatality + "</b>";
       var  totalScoreString = "Weighted Total Score: <b>" + d.intersectTotal + "</b>";
 
       console.log(d); 
 
-      return intersectString + "<br/>" + propDamageString + "<br/>" + possInjuryString + "<br/>" 
+      return intersectString + "<br/>" + accidentsHeader + "<br/>" + propDamageString + "<br/>" + possInjuryString + "<br/>" 
         + nonIncapInjuryString + "<br/>" + incapInjuryString + "<br/>" + fatalityString + "<br/>" 
         + totalScoreString ; 
     });
