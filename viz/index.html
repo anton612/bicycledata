@@ -9,77 +9,91 @@
      <script type="text/javascript" src="lib/d3.tip.js"></script>
 
     <style type="text/css">
+      #map {
+        width: 960px;
+        height: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-#map {
-  width: 960px;
-  height: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
+      svg {
+        position: relative;
+      }
 
-svg {
-  position: relative;
-}
+      #crashData{
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-.d3-tip {
-  line-height: 1;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
-  pointer-events: none;
-}
+      #crashData td {
+        border: 1px solid black;
+        padding: 3px;
+      }
 
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  pointer-events: none;
-}
+      .d3-tip {
+        line-height: 1;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+        pointer-events: none;
+      }
 
-/* Northward tooltips */
-.d3-tip.n:after {
-  content: "\25BC";
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
-  text-align: center;
-}
+      /* Creates a small triangle extender for the tooltip */
+      .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        width: 100%;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        pointer-events: none;
+      }
 
-/* Eastward tooltips */
-.d3-tip.e:after {
-  content: "\25C0";
-  margin: -4px 0 0 0;
-  top: 50%;
-  left: -8px;
-}
+      /* Northward tooltips */
+      .d3-tip.n:after {
+        content: "\25BC";
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+        text-align: center;
+      }
 
-/* Southward tooltips */
-.d3-tip.s:after {
-  content: "\25B2";
-  margin: 0 0 1px 0;
-  top: -8px;
-  left: 0;
-  text-align: center;
-}
+      /* Eastward tooltips */
+      .d3-tip.e:after {
+        content: "\25C0";
+        margin: -4px 0 0 0;
+        top: 50%;
+        left: -8px;
+      }
 
-/* Westward tooltips */
-.d3-tip.w:after {
-  content: "\25B6";
-  margin: -4px 0 0 -1px;
-  top: 50%;
-  left: 100%;
-}
+      /* Southward tooltips */
+      .d3-tip.s:after {
+        content: "\25B2";
+        margin: 0 0 1px 0;
+        top: -8px;
+        left: 0;
+        text-align: center;
+      }
 
+      /* Westward tooltips */
+      .d3-tip.w:after {
+        content: "\25B6";
+        margin: -4px 0 0 -1px;
+        top: 50%;
+        left: 100%;
+      }
     </style>
   </head>
   <body>
     <div id="map"></div>
+    <div >
+      <table id="crashData">
+      </table>
+    </div>
     <script type="text/javascript">
 
     d3.selection.prototype.moveToFront = function() {
@@ -123,8 +137,6 @@ loadData().then(function(){
       var  fatalityString = "Fatality: <b>" + d.intersectFatality + "</b>";
       var  totalScoreString = "Weighted Total Score: <b>" + d.intersectTotal + "</b>";
 
-      console.log(d); 
-
       return intersectString + "<br/>" + accidentsHeader + "<br/>" + propDamageString + "<br/>" + possInjuryString + "<br/>" 
         + nonIncapInjuryString + "<br/>" + incapInjuryString + "<br/>" + fatalityString + "<br/>" 
         + totalScoreString ; 
@@ -133,7 +145,10 @@ loadData().then(function(){
 
   var crashes = g.selectAll("circle").data(nestData).enter().append("circle")
   .on('mouseover', tip.show)
-  .on('mouseout', tip.hide);
+  .on('mouseout', tip.hide)
+  .on('click', function(d){
+    displayData(d);
+  });
 
   map.on("viewreset", function(){
     reset();
@@ -209,7 +224,31 @@ loadData().then(function(){
         return point.y;
       }
     }).moveToFront();
-}
+  }
+
+  function displayData(d){
+    var dataTable = d3.select("#crashData");
+
+    dataTable.selectAll("tr").remove();
+
+    var rows = dataTable.selectAll("tr>th").data(d.values).enter().append("tr").style("background-color", function(d,i){return i%2 == 1 ? "#dfdfdf" : "#fff"});
+
+    rows.append("td").text(function(d){return d["Primary Road"]});
+    rows.append("td").text(function(d){return d["Intersecting Road"]});
+
+    rows.append("td").text(function(d){
+      var inDate = d["Date"];
+      var inTime = Array(4-String(d["Time"]).length+1).join("0")+ String(d["Time"]);
+
+      var tryDate = new Date(inDate);
+      tryDate.setHours(inTime.substring(0,2));
+      tryDate.setMinutes(inTime.substring(2,4))
+
+      return tryDate.toLocaleString();
+    });
+
+    rows.append("td").text(function(d){return d["Level"]});
+  }
 
 });
 
