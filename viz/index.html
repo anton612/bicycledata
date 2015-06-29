@@ -9,6 +9,10 @@
      <script type="text/javascript" src="lib/d3.tip.js"></script>
 
     <style type="text/css">
+      p.disclaimer{
+        text-align: center;
+      }
+
       #map {
         width: 960px;
         height: 500px;
@@ -89,7 +93,9 @@
     </style>
   </head>
   <body>
-    <p>Bike data from <a href="https://github.com/anton612/bicycledata">here</a>, geocoded from Google. ~80 crashes were removed for non accurate geocoding, will be added back once it's manually done. Source is <a href="https://github.com/gelicia/bicycledata/blob/master/viz/index.html">here</a>. Questions or problems, contact <a href="mailto:kdurivage@gelicia.com">me</a>.</p>
+    <p class="disclaimer">Bike data from <a href="https://github.com/anton612/bicycledata">here</a> (thanks Anton!), geocoded from Google. ~80 crashes were removed for non accurate geocoding, will be added back once it's manually done. Source is <a href="https://github.com/gelicia/bicycledata/blob/master/viz/index.html">here</a>.<br/>
+    Please don't read too much into the intersection's weighted score. I need to consult with a domain expert on an accurate weighting. Mine is <a href="https://github.com/gelicia/bicycledata/blob/master/viz/index.html#L269">very simple</a>.<br/>
+    Questions or problems, contact <a href="mailto:kdurivage@gelicia.com">me</a>.</p>
     <div id="map"></div>
     <div >
       <table id="crashData">
