@@ -5,3 +5,5 @@ Right now, there is a shapefile of car-bike crashes from 2000-2010, and raw data
 The raw data was found using the Minneapolis Transportation Data Management System:
 
 http://minneapolis.ms2soft.com/tcds/tsearch.asp?loc=Minneapolis&mod=
+
+See data visualizations relating to this data at https://github.com/gelicia/bikeCrashViz
