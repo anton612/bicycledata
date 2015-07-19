@@ -1784,20 +1784,20 @@ Crash ID,County,Community,Primary Road,Intersecting Road,Date,Time,Type,Level,Cr
 09-266412,Hennepin,Minneapolis,4th St N,2nd Av N,8/23/09,230,Bicycle,Possible Injury (C),,44.9820275,-93.2736567
 11-169204,Hennepin,Minneapolis,4th St N,West Broadway Av N,6/13/11,1703,Bicycle,Possible Injury (C),,44.9991762,-93.284943
 00-225234,Hennepin,Minneapolis,4th St NE,22nd Av NE,7/24/00,1620,Bicycle,Property Damage Only,,45.0100107,-93.261593
-00-327520,Hennepin,Minneapolis,4th St S,Hennepin Av S,10/20/00,2300,Bicycle,Possible Injury (C),,44.9884743,-93.2549796
+00-327520,Hennepin,Minneapolis,4th St S,Hennepin Av S,10/20/00,2300,Bicycle,Possible Injury (C),,44.9804419,-93.271348
 00-340878,Hennepin,Minneapolis,4th St S,19th Av S,11/2/00,720,Bicycle,Possible Injury (C),,44.9699927,-93.2456498
 01-351217,Hennepin,Minneapolis,4th St S,West River Pkwy S,12/4/01,1826,Bicycle,Possible Injury (C),,44.9691632,-93.2379795
 02-110555,Hennepin,Minneapolis,4th St S,5th Av S,4/29/02,1500,Bicycle,Possible Injury (C),,44.976894,-93.2630257
 03-239919,Hennepin,Minneapolis,4th St S,20th Av S,9/5/03,1640,Bicycle,Property Damage Only,,44.969974,-93.24407
-04-075363,Hennepin,Minneapolis,4th St S,Hennepin Av S,4/2/04,1635,Bicycle,Non-Incap. Injury (B),,44.9884743,-93.2549796
-04-221210,Hennepin,Minneapolis,4th St S,Hennepin Av S,8/25/04,2243,Bicycle,Non-Incap. Injury (B),,44.9884743,-93.2549796
+04-075363,Hennepin,Minneapolis,4th St S,Hennepin Av S,4/2/04,1635,Bicycle,Non-Incap. Injury (B),,44.9804419,-93.271348
+04-221210,Hennepin,Minneapolis,4th St S,Hennepin Av S,8/25/04,2243,Bicycle,Non-Incap. Injury (B),,44.9804419,-93.271348
 05-058324,Hennepin,Minneapolis,4th St S,West River Pkwy S,3/9/05,750,Bicycle,Incap. Injury (A),,44.9691632,-93.2379795
 06-324603,Hennepin,Minneapolis,4th St S,Marquette Av S,11/15/06,845,Bicycle,Possible Injury (C),,44.9792134,-93.2684414
 08-155359,Hennepin,Minneapolis,4th St S,3rd Av S,5/28/08,840,Bicycle,Non-Incap. Injury (B),,44.9780254,-93.2656569
 10-096156,Hennepin,Minneapolis,4th St S,5th Av S,4/8/10,1355,Bicycle,Property Damage Only,,44.976894,-93.2630257
 10-321856,Hennepin,Minneapolis,4th St S,Nicollet Mall S,10/20/10,2049,Bicycle,Possible Injury (C),,44.9797931,-93.269813
-12-251303,Hennepin,Minneapolis,4th St S,Hennepin Av S,8/10/12,2357,Bicycle,Possible Injury (C),,44.9884743,-93.2549796
-13-236526,Hennepin,Minneapolis,4th St S,Hennepin Av S,7/22/13,1821,Bicycle,Property Damage Only,,44.9884743,-93.2549796
+12-251303,Hennepin,Minneapolis,4th St S,Hennepin Av S,8/10/12,2357,Bicycle,Possible Injury (C),,44.9804419,-93.271348
+13-236526,Hennepin,Minneapolis,4th St S,Hennepin Av S,7/22/13,1821,Bicycle,Property Damage Only,,44.9804419,-93.271348
 13-309417,Hennepin,Minneapolis,4th St S,2nd Av S,9/19/13,236,Bicycle,Non-Incap. Injury (B),,44.978639,-93.2670638
 14-257353,Hennepin,Minneapolis,4th St S,3rd Av S,7/24/14,1215,Bicycle,Possible Injury (C),,44.9780254,-93.2656569
 00-088034,Hennepin,Minneapolis,4th St SE,11th Av SE,3/27/00,1641,Bicycle,Possible Injury (C),,44.9821411,-93.2399343
@@ -2951,7 +2951,7 @@ Crash ID,County,Community,Primary Road,Intersecting Road,Date,Time,Type,Level,Cr
 09-187988,Hennepin,Minneapolis,Hennepin Av S,25 1/2 St W,6/20/09,1250,Bicycle,Non-Incap. Injury (B),,44.9562774,-93.2962738
 09-190176,Hennepin,Minneapolis,Hennepin Av S,8th St S,6/22/09,750,Bicycle,Non-Incap. Injury (B),,44.9771988,-93.275904
 09-205378,Hennepin,Minneapolis,Hennepin Av S,31st St W,7/4/09,30,Bicycle,Non-Incap. Injury (B),,44.9465569,-93.2982965
-09-206057,Hennepin,Minneapolis,Hennepin Av S,4th St S,7/5/09,128,Bicycle,Possible Injury (C),,44.9884743,-93.2549796
+09-206057,Hennepin,Minneapolis,Hennepin Av S,4th St S,7/5/09,128,Bicycle,Possible Injury (C),,44.9804419,-93.271348
 09-229305,Hennepin,Minneapolis,Hennepin Av S,31st St W,7/23/09,2117,Bicycle,Property Damage Only,,44.9465569,-93.2982965
 09-243477,Hennepin,Minneapolis,Hennepin Av S,Fremont Av S,8/4/09,1250,Bicycle,Possible Injury (C),,44.958205,-93.2947817
 09-249152,Hennepin,Minneapolis,Hennepin Av S,9th St S,8/9/09,105,Bicycle,Non-Incap. Injury (B),,44.9764223,-93.2769685
@@ -3008,10 +3008,10 @@ Crash ID,County,Community,Primary Road,Intersecting Road,Date,Time,Type,Level,Cr
 13-268999,Hennepin,Minneapolis,Hennepin Av S,9th St S,8/16/13,2300,Bicycle,Possible Injury (C),,44.9764223,-93.2769685
 13-294935,Hennepin,Minneapolis,Hennepin Av S,1st St S,9/6/13,2135,Bicycle,Non-Incap. Injury (B),,44.9838378,-93.2667818
 13-319504,Hennepin,Minneapolis,Hennepin Av S,Groveland Av W,9/27/13,1906,Bicycle,Non-Incap. Injury (B),,44.9671025,-93.2880237
-13-320175,Hennepin,Minneapolis,Hennepin Av S,4th St S,9/28/13,303,Bicycle,Property Damage Only,,44.9884743,-93.2549796
-14-173482,Hennepin,Minneapolis,Hennepin Av S,4th St S,5/25/14,100,Bicycle,Property Damage Only,,44.9884743,-93.2549796
+13-320175,Hennepin,Minneapolis,Hennepin Av S,4th St S,9/28/13,303,Bicycle,Property Damage Only,,44.9804419,-93.271348
+14-173482,Hennepin,Minneapolis,Hennepin Av S,4th St S,5/25/14,100,Bicycle,Property Damage Only,,44.9804419,-93.271348
 14-280078,Hennepin,Minneapolis,Hennepin Av S,8th St S,8/9/14,1730,Bicycle,Non-Incap. Injury (B),,44.9771988,-93.275904
-14-333148,Hennepin,Minneapolis,Hennepin Av S,4th St S,9/19/14,1655,Bicycle,Possible Injury (C),,44.9884743,-93.2549796
+14-333148,Hennepin,Minneapolis,Hennepin Av S,4th St S,9/19/14,1655,Bicycle,Possible Injury (C),,44.9804419,-93.271348
 14-339696,Hennepin,Minneapolis,Hennepin Av S,25th St W,9/24/14,1904,Bicycle,Possible Injury (C),,44.95734,-93.2954546
 14-376039,Hennepin,Minneapolis,Hennepin Av S,5th St S,10/22/14,1930,Bicycle,Non-Incap. Injury (B),,44.9889786,-93.253519
 14-395157,Hennepin,Minneapolis,Hennepin Av S,8th St S,11/7/14,655,Bicycle,Possible Injury (C),,44.9771988,-93.275904
